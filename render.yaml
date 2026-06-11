@@ -5,3 +5,13 @@ services:
     buildCommand: pip install -r requirements.txt && python train.py
     startCommand: uvicorn api:app --host 0.0.0.0 --port $PORT
     plan: free
+
+  - type: web
+    name: churn-predictor-ui
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0
+    plan: free
+    envVars:
+      - key: API_URL
+        value: https://churn-ml-0kud.onrender.com
