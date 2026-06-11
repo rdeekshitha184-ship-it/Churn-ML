@@ -14,7 +14,8 @@ st.set_page_config(
     layout="wide"
 )
 
-API_URL = os.getenv("API_URL", "http://localhost:8000")
+
+API_URL = os.getenv("API_URL", "https://churn-ml-0kud.onrender.com")
 
 st.title("📉 Customer Churn Predictor")
 st.markdown(
