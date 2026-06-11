@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: churn-predictor-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: bash render_start.sh
+    plan: free
